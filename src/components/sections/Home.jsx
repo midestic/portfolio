@@ -1,11 +1,5 @@
 import { RevealOnScroll } from "../RevealOnScroll";
-import {
-  FaLinkedin,
-  FaGithub,
-  FaTwitter,
-  FaEnvelope,
-  FaFacebook,
-} from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaTwitter, FaFacebook } from "react-icons/fa";
 
 export default function Home() {
   return (

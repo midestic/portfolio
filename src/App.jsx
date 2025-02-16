@@ -14,7 +14,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <>
+    <div className="App">
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
 
       <div
@@ -29,7 +29,7 @@ function App() {
         <Projects />
         <Contact />
       </div>
-    </>
+    </div>
   );
 }
 

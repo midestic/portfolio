@@ -88,3 +88,32 @@ body {
   animation: blink-caret 0.75s step-end 3.5s;
   animation-fill-mode: forwards;
 }
+
+.App {
+  margin: 0;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Ensure sections and containers are responsive */
+section,
+div {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure images and media elements are responsive */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure flex containers do not cause overflow */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+}

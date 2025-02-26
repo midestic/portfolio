@@ -6,12 +6,12 @@ export const About = () => {
     "CSS",
     "JavaScript",
     "Git",
+    "GitHub",
     "BootStrap",
     "React",
-    "Vue",
+    "Next.JS",
     "TypeScript",
     "TailwindCSS",
-    "Svelte",
   ];
 
   const backendSkills = ["Node.js", "Firebase", "Supabase"];

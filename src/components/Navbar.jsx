@@ -8,7 +8,7 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
 
   return (
     <nav className="fixed top-0 w-full z-40 bg-[rgba(10,10,10,0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg max-w-[1920px] mx-auto px-4">
-      <div className="px-4">
+      <div className="mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <img
             src={myImg}

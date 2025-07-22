@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function AITask() {
   return (
     <div
@@ -12,15 +10,15 @@ export default function AITask() {
       </h3>
       <p className="text-gray-400 mb-4">
         <p>
-          AI Task Generator is an interactive web app that takes a user's text
-          input and uses multiple AI agents to generate a rich media output.
-          It’s designed to showcase how language, image, and audio generation
-          can work together seamlessly in a single flow.
+          AI Task Generator is an interactive web app that takes a user&apos;s
+          text input and uses multiple AI agents to generate a rich media
+          output. It&apos;s designed to showcase how language, image, and audio
+          generation can work together seamlessly in a single flow.
         </p>
         <ul className="list-disc list-inside text-gray-300 space-y-2">
           <li>
-            🧠 Headline Generation: Uses OpenAI's GPT-3.5 to create a short,
-            catchy headline based on the user’s input.
+            🧠 Headline Generation: Uses OpenAI&apos;s GPT-3.5 to create a
+            short, catchy headline based on the user&apos;s input.
           </li>
 
           <li>

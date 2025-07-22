@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 const myImg = "./images/img.jpg";
 
+import PropTypes from "prop-types";
+
 export default function Navbar({ menuOpen, setMenuOpen }) {
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -69,3 +71,8 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
     </nav>
   );
 }
+
+Navbar.propTypes = {
+  menuOpen: PropTypes.bool.isRequired,
+  setMenuOpen: PropTypes.func.isRequired,
+};

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function MobileMenu({ menuOpen, setMenuOpen }) {
   return (
     <div
@@ -79,3 +81,8 @@ export default function MobileMenu({ menuOpen, setMenuOpen }) {
     </div>
   );
 }
+
+MobileMenu.propTypes = {
+  menuOpen: PropTypes.bool.isRequired,
+  setMenuOpen: PropTypes.func.isRequired,
+};

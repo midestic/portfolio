@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Naptip() {
   return (
     <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
@@ -15,7 +13,8 @@ export default function Naptip() {
           </li>
 
           <li>
-            Enhanced the group's online presence and accessibility of resources.
+            Enhanced the group&apos;s online presence and accessibility of
+            resources.
           </li>
 
           <li>

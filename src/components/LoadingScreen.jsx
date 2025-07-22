@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import PropTypes from "prop-types";
+
 export default function LoadingScreen({ onComplete }) {
   const [text, setText] = useState("");
   const fullText = "<Welcome to Midestic_HUB>";
@@ -34,3 +36,7 @@ export default function LoadingScreen({ onComplete }) {
     </div>
   );
 }
+
+LoadingScreen.propTypes = {
+  onComplete: PropTypes.func.isRequired,
+};

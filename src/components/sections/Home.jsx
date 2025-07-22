@@ -11,15 +11,16 @@ export default function Home() {
         <div className="text-center z-10 px-4 space-y-[50px]">
           <div className="typewriter">
             <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-tight">
-              Hi, I'm Usman Badmus
+              Hi, I&apos;m Usman Badmus
             </h1>
           </div>
           <p className="text-gray-400 text-lg  mx-auto w-[70%] max-md:w-[100%]">
-            I'm a full-stack developer who just loves building stuff that works
-            and makes sense. I like keeping my code clean and scalable, and I'm
-            all about creating smooth user experiences, both on the frontend and
-            backend. For me, it’s not just about making things look good, but
-            also making sure they perform well and actually solve real problems.
+            I&apos;m a full-stack developer who just loves building stuff that
+            works and makes sense. I like keeping my code clean and scalable,
+            and I&apos;m all about creating smooth user experiences, both on the
+            frontend and backend. For me, it’s not just about making things look
+            good, but also making sure they perform well and actually solve real
+            problems.
           </p>
 
           <div className="flex justify-center space-x-4">

@@ -58,6 +58,14 @@ export default function WeatherApp() {
         >
           View Project →
         </a>
+
+        <a
+          href="https://github.com/midestic/weather-app"
+          target="_blank"
+          className="text-blue-400 hover:text-blue-300 transition-colors my-4"
+        >
+          Source Code →
+        </a>
       </div>
     </div>
   );

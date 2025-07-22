@@ -1,9 +1,12 @@
+import AITask from "../projects/AITask";
 import DaToothsomeHub from "../projects/daToothsomeHub";
+import Ecommerce from "../projects/Ecommerce";
 import Famr from "../projects/Famr";
 import Lapo from "../projects/Lapo";
 import Mandem from "../projects/Mandem";
 import MidesticData from "../projects/MidesticData";
 import Naptip from "../projects/Naptip";
+import Pharmmar from "../projects/Pharmmar";
 import Recipe from "../projects/Recipe";
 import TechCare from "../projects/TechCare";
 import WeatherApp from "../projects/WeatherApp";
@@ -24,9 +27,15 @@ export const Projects = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <DaToothsomeHub />
 
+            <Ecommerce />
+
             <Naptip />
 
+            <Pharmmar />
+
             <Famr />
+
+            <AITask />
 
             <TechCare />
 

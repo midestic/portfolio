@@ -78,10 +78,6 @@ export const About = () => {
                   University of Technology Akure(2018-2024)
                 </li>
 
-                <li>
-                  <strong> SSCE </strong> -Oriwu Model College
-                  Ikorodu(2006-2012)
-                </li>
                 {/* <li>
                   Relevant Coursework: Data Structures, Web Development, Cloud
                   Computing...
@@ -91,21 +87,16 @@ export const About = () => {
             <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
               <h3 className="text-xl font-bold mb-4"> 💼 Work Experience </h3>
               <div className="space-y-4 text-gray-300">
-                {/* <div>
+                <div>
                   <h4 className="font-semibold">
-                    {" "}
-                    Software Engineer at ABC Corp (2020 - Present){" "}
+                    💊 Frontend Engineer — Pharmmar
                   </h4>
-                  <p>
-                    Developed and maintained microservices for cloud-based
-                    applications.
-                  </p>
-                </div> */}
+                  <p>Pharmaceutical Marketplace Startup – Present</p>
+                </div>
 
                 <div>
                   <h4 className="font-semibold">
-                    {" "}
-                    Intern at SOLUT Startups (2024){" "}
+                    Intern at SOLUT Startups (2024)
                   </h4>
                   <p>
                     Assisted in building front-end components and integration

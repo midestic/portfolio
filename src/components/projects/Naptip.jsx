@@ -38,12 +38,20 @@ export default function Naptip() {
       </div>
 
       <div className="flex justify-between items-center">
+        {" "}
         <a
           href="https://naptip-ikd.vercel.app/"
           target="_blank"
           className="text-blue-400 hover:text-blue-300 transition-colors my-4"
         >
           View Project →
+        </a>
+        <a
+          href="https://github.com/midestic/naptip-ikd"
+          target="_blank"
+          className="text-blue-400 hover:text-blue-300 transition-colors my-4"
+        >
+          Source Code →
         </a>
       </div>
     </div>

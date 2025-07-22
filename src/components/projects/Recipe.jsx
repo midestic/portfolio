@@ -55,6 +55,14 @@ export default function Recipe() {
         >
           View Project →
         </a>
+
+        <a
+          href="https://github.com/midestic/recipe-app"
+          target="_blank"
+          className="text-blue-400 hover:text-blue-300 transition-colors my-4"
+        >
+          Source Code →
+        </a>
       </div>
     </div>
   );

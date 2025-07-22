@@ -45,6 +45,14 @@ export default function TechCare() {
         >
           View Project →
         </a>
+
+        <a
+          href="https://github.com/midestic/techCare"
+          target="_blank"
+          className="text-blue-400 hover:text-blue-300 transition-colors my-4"
+        >
+          Source Code →
+        </a>
       </div>
     </div>
   );

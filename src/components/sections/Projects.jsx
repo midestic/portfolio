@@ -1,4 +1,5 @@
 import DaToothsomeHub from "../projects/daToothsomeHub";
+import Famr from "../projects/Famr";
 import Lapo from "../projects/Lapo";
 import Mandem from "../projects/Mandem";
 import MidesticData from "../projects/MidesticData";
@@ -24,6 +25,8 @@ export const Projects = () => {
             <DaToothsomeHub />
 
             <Naptip />
+
+            <Famr />
 
             <TechCare />
 

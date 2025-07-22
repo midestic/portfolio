@@ -1,5 +1,5 @@
 import AITask from "../projects/AITask";
-import DaToothsomeHub from "../projects/daToothsomeHub";
+import DaTooth from "../projects/Datooth";
 import Ecommerce from "../projects/Ecommerce";
 import Famr from "../projects/Famr";
 import Lapo from "../projects/Lapo";
@@ -25,8 +25,7 @@ export const Projects = () => {
             Featured Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <DaToothsomeHub />
-
+            <DaTooth />
             <Ecommerce />
 
             <Naptip />

@@ -1,6 +1,6 @@
 export default function DaTooth() {
   return (
-    <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
+    <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition z-10">
       <h3 className="text-xl font-bold mb-2">
         {" "}
         🍫 daToothsomeHub – Sweetening the E-Commerce Experience
@@ -46,13 +46,15 @@ export default function DaTooth() {
       </div>
 
       <div className="flex justify-between items-center">
-        <a
-          href="https://datoothsomehub.vercel.app/"
-          target="_blank"
-          className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-        >
-          View Project →
-        </a>
+        <button>
+          <a
+            href="https://datoothsomehub.vercel.app/"
+            target="_blank"
+            className="text-blue-400 hover:text-blue-300 transition-colors my-4"
+          >
+            View Project →
+          </a>
+        </button>
 
         <a
           href="https://github.com/midestic/datoothsomehub"

@@ -18,8 +18,7 @@ export default function Home() {
             I&apos;m a full-stack developer passionate about building
             functional, reliable, and scalable digital experiences. I care
             deeply about clean code, intuitive UI, and seamless backend
-            performance. For me, it’s not just about how things look—it’s about
-            how well they work and the real problems they solve.
+            performance.
           </p>
 
           <div className="flex justify-center space-x-4">

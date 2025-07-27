@@ -3,6 +3,8 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import Particles from "./components/animations/Particles.jsx";
+import SplashCursor from "./components/animations/SplashCursor.jsx";
+import TargetCursor from "./components/animations/TargetCursor.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -18,6 +20,10 @@ createRoot(document.getElementById("root")).render(
         disableRotation={false}
       />
     </div>
+
+    <TargetCursor spinDuration={2} hideDefaultCursor={true} />
+    <SplashCursor />
+
     <App />
   </StrictMode>
 );

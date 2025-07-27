@@ -1,6 +1,35 @@
+import {
+  DiCss3,
+  DiHtml5,
+  DiJavascript1,
+  DiNodejs,
+  DiReact,
+} from "react-icons/di";
+import InfiniteScroll from "../animations/InfiniteScroll";
 import { RevealOnScroll } from "../RevealOnScroll";
+import { SiTailwindcss, SiTypescript } from "react-icons/si";
+import { RiNextjsFill } from "react-icons/ri";
 
 export const About = () => {
+  const items = [
+    { content: <DiReact className="w-[150px] h-[150px] " /> },
+    { content: <p>REACT</p> },
+    { content: <DiHtml5 className="w-[150px] h-[150px] " /> },
+    { content: <p>HTML</p> },
+    { content: <SiTypescript className="w-[100px] h-[100px] " /> },
+    { content: <p>TYPESCRIPT</p> },
+    { content: <RiNextjsFill className="w-[100px] h-[100px] " /> },
+    { content: <p>NEXT.JS</p> },
+    { content: <DiJavascript1 className="w-[100px] h-[100px] " /> },
+    { content: <p>JAVASCRIPT</p> },
+    { content: <DiNodejs className="w-[100px] h-[100px] " /> },
+    { content: <p>NODE.JS</p> },
+    { content: <SiTailwindcss className="w-[100px] h-[100px] " /> },
+    { content: <p>TAILWIND CSS</p> },
+    { content: <DiCss3 className="w-[100px] h-[100px] " /> },
+    { content: <p>CSS</p> },
+  ];
+
   const frontendSkills = [
     "HTML",
     "CSS",
@@ -105,6 +134,21 @@ export const About = () => {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div
+            className=" mt-[50px]  rounded-xl border-white/10 border"
+            style={{ height: "500px", position: "relative" }}
+          >
+            <InfiniteScroll
+              items={items}
+              isTilted={true}
+              tiltDirection="left"
+              autoplay={true}
+              autoplaySpeed={3}
+              autoplayDirection="down"
+              pauseOnHover={true}
+            />
           </div>
         </div>
       </RevealOnScroll>

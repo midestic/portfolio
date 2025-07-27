@@ -14,12 +14,12 @@ export default function Home() {
               Hi, I&apos;m Usman Badmus
             </h1>
           </div>
-          <p className="text-gray-400 text-lg  mx-auto w-[70%] max-md:w-[100%]">
-            A full-stack developer who just loves building stuff that works. I
-            like keeping my code clean and scalable, All about creating smooth
-            user experiences, both on the frontend and backend. For me,
-            it&apos;s not just about making things look good, but also making
-            sure they perform well and actually solve real problems.
+          <p className="text-gray-400 text-lg  mx-auto w-[50%] max-md:w-[100%]">
+            I&apos;m a full-stack developer passionate about building
+            functional, reliable, and scalable digital experiences. I care
+            deeply about clean code, intuitive UI, and seamless backend
+            performance. For me, it’s not just about how things look—it’s about
+            how well they work and the real problems they solve.
           </p>
 
           <div className="flex justify-center space-x-4">

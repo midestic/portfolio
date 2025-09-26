@@ -42,7 +42,7 @@ export default function Home() {
           <div className="mt-8 max-w-xs mx-auto">
             <div className="flex justify-center items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 flex-wrap">
               <a
-                href="https://www.linkedin.com/in/usman-badmus-59951b24a/"
+                href="https://www.linkedin.com/in/usman-badmus/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:text-blue-400 transition"

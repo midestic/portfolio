@@ -3,6 +3,7 @@ import DaTooth from "../projects/Datooth";
 import Ecommerce from "../projects/Ecommerce";
 import Famr from "../projects/Famr";
 import Lapo from "../projects/Lapo";
+import Mahjeq from "../projects/Mahjeq";
 import Mandem from "../projects/Mandem";
 import MidesticData from "../projects/MidesticData";
 import Naptip from "../projects/Naptip";
@@ -24,6 +25,8 @@ export const Projects = () => {
           Featured Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+          <Mahjeq />
+
           <DaTooth />
 
           <Ecommerce />

@@ -1,4 +1,5 @@
 import AITask from "../projects/AITask";
+import AjoPay from "../projects/AjoPay";
 import DaTooth from "../projects/Datooth";
 import Ecommerce from "../projects/Ecommerce";
 import Famr from "../projects/Famr";
@@ -26,6 +27,8 @@ export const Projects = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
           <Mahjeq />
+
+          <AjoPay />
 
           <DaTooth />
 

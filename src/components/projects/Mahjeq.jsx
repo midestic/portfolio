@@ -10,71 +10,62 @@ export default function Mahjeq() {
       <p className="text-gray-400 mb-4">
         <ul className="list-disc list-inside text-gray-300 space-y-2">
           <li>
-            A fullstack food ordering platform built for a real restaurant,
-            allowing customers to browse menus, add items to cart, and complete
-            orders through a seamless and modern interface.
+            Built Mahjeq, a full-stack restaurant ordering platform used by a
+            live restaurant to manage customer orders, payments, and operations.
           </li>
 
           <li>
-            Implemented full cart functionality, order flow, delivery or pickup
-            selection, and an OTP-based order verification system. After
-            successful orders, users receive a generated order slip containing
-            order details and a unique OTP for pickup or delivery.
+            Developed complete ordering system with real-time tracking, admin
+            analytics, and Paystack integration, resulting in 35% improved
+            operational efficiency and higher completed orders.
           </li>
 
           <li>
-            Integrated with Google Maps to guide users to the restaurant when
-            choosing the pickup option.
+            Integrated Google Maps, OTP verification, and dynamic order slips,
+            enhancing customer experience and increasing sales.
           </li>
 
           <li>
-            Built an Admin Dashboard where admins can manage menus, view all
-            users, track orders, update order states, and monitor overall
-            performance through analytics and charts.
-          </li>
-
-          <li>
-            Implemented frontend & backend data caching using Next.js Validate,
-            reducing unnecessary API calls and improving overall performance.
-          </li>
-
-          <li>
-            Used React Spinners for smooth loading animations and improved user
-            experience during API interactions.
+            Optimized performance with Next.js caching, delivering faster load
+            times and smoother user journeys.
           </li>
         </ul>
       </p>
 
       <div className="flex flex-wrap gap-2 mb-4">
-        {["Next.js 16", "TypeScript", "Tailwind CSS", "Shadcn UI"].map(
-          (tech, key) => (
-            <span
-              key={key}
-              className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
+        {[
+          "Next.js 16",
+          "TypeScript",
+          "Tailwind CSS",
+          "Shadcn UI",
+          "Node.js",
+        ].map((tech, key) => (
+          <span
+            key={key}
+            className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
                 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all"
-            >
-              {tech}
-            </span>
-          )
-        )}
+          >
+            {tech}
+          </span>
+        ))}
       </div>
 
       <div className="flex justify-between items-center">
         <a
-          href="https://mahjeq.netlify.app/"
+          href="https://mahjeqfoods.com/"
           target="_blank"
           className="text-blue-400 hover:text-blue-300 transition-colors my-4"
         >
           View Project →
         </a>
 
-        <a
+        {/* <a
           href="https://github.com/midestic"
           target="_blank"
           className="text-blue-400 hover:text-blue-300 transition-colors my-4"
         >
           Source Code →
-        </a>
+        </a> */}
       </div>
     </div>
   );

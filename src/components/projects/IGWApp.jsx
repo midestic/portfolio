@@ -1,4 +1,4 @@
-export default function Pharmmar() {
+export default function IGWApp() {
   return (
     <div
       className="p-6 rounded-xl border border-white/10 hover:-translate-y-1
@@ -6,29 +6,31 @@ export default function Pharmmar() {
               transition z-10"
     >
       <h3 className="text-xl font-bold mb-2">
-        Pharmmar – Pharmaceutical Marketplace Platform
+        IGW App(iGaming WriteNow) – iGaming Glossary & Localisation Platform
       </h3>
       <p className="text-gray-400 mb-4">
         <ul className="list-disc list-inside text-gray-300 space-y-2">
           <li>
-            Built responsive SaaS landing page and waitlist system that clearly
-            communicated product value, resulting in increased user sign-ups and
-            lead generation.
+            Designed and launched iGW App, a glossary and localisation tool used
+            by iGaming writers, marketers, and brands to create compliant, SEO
+            friendly content.
           </li>
 
           <li>
-            Integrated secure backend services for form handling and data
-            storage, improving data accuracy and user trust.
+            Delivered 300+ expert terms with definitions, use cases, and country
+            specific localisation checklists, helping users reduce compliance
+            risks and expand into new markets safely.
           </li>
 
           <li>
-            Designed mobile-first interface that enhanced user engagement and
-            early access conversions for the B2B pharmaceutical platform.
+            Built smart search, tagging, Term of the Day, and per-user progress
+            tracking features that increased platform engagement and user
+            retention.
           </li>
         </ul>
       </p>
       <div className="flex flex-wrap gap-2 mb-4">
-        {["Next.js", "Typescript", "Tailwind CSS", "Shadcn", "Nodejs"].map(
+        {["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"].map(
           (tech, key) => (
             <span
               key={key}
@@ -44,7 +46,7 @@ export default function Pharmmar() {
 
       <div className="flex justify-between items-center">
         <a
-          href="https://pharmmar.com/"
+          href="https://app.igamingwritenow.com/"
           target="_blank"
           className="text-blue-400 hover:text-blue-300 transition-colors my-4"
         >

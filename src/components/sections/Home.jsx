@@ -11,14 +11,13 @@ export default function Home() {
         <div className="text-center z-10 px-4 space-y-[50px]">
           <div className="typewriter">
             <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-tight">
-              Hi, I&apos;m Usman Badmus
+              Hi, I&apos;m Badmus O. Usman
             </h1>
           </div>
           <p className="text-gray-400 text-lg  mx-auto w-[50%] max-md:w-[100%]">
-            I&apos;m a full-stack developer passionate about building
-            functional, reliable, and scalable digital experiences. I care
-            deeply about clean code, intuitive UI, and seamless backend
-            performance.
+            Full-Stack Engineer with experience building secure RESTful APIs and
+            delivering scalable SaaS and fintech applications using JavaScript,
+            Node.js, Express, Next.js, and TypeScript.
           </p>
 
           <div className="flex justify-center space-x-4">
@@ -50,7 +49,7 @@ export default function Home() {
                 <FaLinkedin size={30} />
               </a>
               <a
-                href="https://github.com/midestic?tab=repositories"
+                href="https://github.com/midestic"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-gray-300 transition"

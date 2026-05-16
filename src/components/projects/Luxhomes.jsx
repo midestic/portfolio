@@ -1,4 +1,4 @@
-export default function Pharmmar() {
+export default function Luxhomes() {
   return (
     <div
       className="p-6 rounded-xl border border-white/10 hover:-translate-y-1
@@ -6,29 +6,36 @@ export default function Pharmmar() {
               transition z-10"
     >
       <h3 className="text-xl font-bold mb-2">
-        Pharmmar – Pharmaceutical Marketplace Platform
+        Luxhomes – Property Management Platform
       </h3>
       <p className="text-gray-400 mb-4">
         <ul className="list-disc list-inside text-gray-300 space-y-2">
           <li>
-            Built responsive SaaS landing page and waitlist system that clearly
-            communicated product value, resulting in increased user sign-ups and
-            lead generation.
+            Developed Luxhomes, a complete property management platform for
+            hosts and admins in the vacation rental and real estate sector.
           </li>
 
           <li>
-            Integrated secure backend services for form handling and data
-            storage, improving data accuracy and user trust.
+            Designed RESTful APIs for property management, image uploads, and
+            admin approval workflows, significantly streamlining operations and
+            reducing manual workload.
           </li>
 
           <li>
-            Designed mobile-first interface that enhanced user engagement and
-            early access conversions for the B2B pharmaceutical platform.
+            Built responsive Admin and Host dashboards with role-based access,
+            real-time updates, and detail sheets, improving productivity for
+            both hosts and platform administrators.
+          </li>
+
+          <li>
+            Implemented server-side protection and optimistic updates, creating
+            a secure, maintainable system that supports scalable real estate
+            operations.
           </li>
         </ul>
       </p>
       <div className="flex flex-wrap gap-2 mb-4">
-        {["Next.js", "Typescript", "Tailwind CSS", "Shadcn", "Nodejs"].map(
+        {["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"].map(
           (tech, key) => (
             <span
               key={key}
@@ -44,7 +51,7 @@ export default function Pharmmar() {
 
       <div className="flex justify-between items-center">
         <a
-          href="https://pharmmar.com/"
+          href="https://luxhome.archsaintnexus.com/"
           target="_blank"
           className="text-blue-400 hover:text-blue-300 transition-colors my-4"
         >

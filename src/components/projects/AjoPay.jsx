@@ -6,28 +6,23 @@ export default function AjoPay() {
               transition z-10"
     >
       <h3 className="text-xl font-bold mb-2">
-        Ajopay - Cooperative Savings Platform
+        Ajopay – Cooperative Savings Platform
       </h3>
       <p className="text-gray-400 mb-4">
-        <p>
-          Worked on the backend development of Ajopay, a cooperative and Ajo
-          savings platform designed to automate group savings, payout
-          management, and direct debit processing.
-        </p>
         <ul className="list-disc list-inside text-gray-300 space-y-2">
           <li>
-            Built RESTful APIs using Node.js and Express.js for user
-            authentication, savings cycles, and payout management.
+            Contributing to Ajopay, a cooperative savings (Ajo) platform focused
+            on automated group savings and payouts.
           </li>
 
           <li>
-            Implemented JWT-based authentication and middleware for secure route
-            protection and user validation.
+            Designed secure RESTful APIs and relational database schemas,
+            improving transaction reliability and building user trust.
           </li>
 
           <li>
-            Designed and managed relational data models using Sequelize ORM and
-            MySQL.
+            Implemented JWT authentication and role-based access control,
+            strengthening data security and supporting safe platform growth.
           </li>
         </ul>
       </p>

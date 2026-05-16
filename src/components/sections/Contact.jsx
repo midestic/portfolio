@@ -38,6 +38,22 @@ export const Contact = () => {
             {" "}
             Get In Touch
           </h2>
+
+          <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-12 text-gray-300">
+            <a
+              href="mailto:badmususman50@gmail.com"
+              className="flex items-center gap-2 hover:text-blue-500 transition-colors"
+            >
+              <span>badmususman50@gmail.com</span>
+            </a>
+            <a
+              href="tel:+2349033414253"
+              className="flex items-center gap-2 hover:text-blue-500 transition-colors"
+            >
+              <span>+234 903 341 4253</span>
+            </a>
+          </div>
+
           <form className={`${styles.form} space-y-6`} onSubmit={handleSubmit}>
             <div className="relative">
               <input

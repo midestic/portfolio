@@ -1,81 +1,75 @@
 import { RevealOnScroll } from "../RevealOnScroll";
-import { FaLinkedin, FaGithub, FaTwitter, FaFacebook } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 
 export default function Home() {
+  const marqueeItems = [
+    "Digital product builder",
+    "Frontend experiences",
+    "Scalable backend systems",
+    "Secure APIs",
+    "Fintech engineering",
+    "Full-stack development",
+  ];
+
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center justify-center relative"
-    >
+    <section id="home" className="hero">
       <RevealOnScroll>
-        <div className="text-center z-10 px-4 space-y-[50px]">
-          <div className="typewriter">
-            <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-tight">
-              Hi, I&apos;m Badmus O. Usman
+        <div className="hero-inner">
+          <p className="eyebrow hero-location">Based in Lagos, NG</p>
+          <div className="hero-copy">
+            <p className="eyebrow">Full-stack engineer / builder</p>
+            <h1>
+              I turn ideas
+              <br />
+              <em>into useful products.</em>
             </h1>
-          </div>
-          <p className="text-gray-400 text-lg  mx-auto w-[50%] max-md:w-[100%]">
-            Full-Stack Engineer with experience building secure RESTful APIs and
-            delivering scalable SaaS and fintech applications using JavaScript,
-            Node.js, Express, Next.js, and TypeScript.
-          </p>
-
-          <div className="flex justify-center space-x-4">
-            <a
-              href="#projects"
-              className="bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden
-             hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
-            >
-              View Projects
-            </a>
-
-            <a
-              href="#contact"
-              className=" border border-blue-500/50 text-blue-500 py-3 px-6 rounded font-medium transition-all duration-200
-             hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] hover:bg-blue-500/10"
-            >
-              CONTACT ME
-            </a>
-          </div>
-
-          <div className="mt-8 max-w-xs mx-auto">
-            <div className="flex justify-center items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 flex-wrap">
-              <a
-                href="https://www.linkedin.com/in/usman-badmus/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:text-blue-400 transition"
-              >
-                <FaLinkedin size={30} />
+            <p className="hero-description">
+              I&apos;m Badmus O. Usman, a full-stack engineer with half a decade
+              of experience building secure SaaS and fintech products for
+              thousands of users.
+            </p>
+            <div className="hero-actions">
+              <a href="#projects" className="text-link">
+                Explore selected work <span>↘</span>
               </a>
-              <a
-                href="https://github.com/midestic"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-300 transition"
-              >
-                <FaGithub size={30} />
-              </a>
-              <a
-                href="https://x.com/midestic_JS"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 transition"
-              >
-                <FaTwitter size={30} />
-              </a>
-              <a
-                href="https://www.facebook.com/usman.badmus"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:text-red-400 transition"
-              >
-                <FaFacebook size={30} />
-              </a>
+              <div className="social-links">
+                <a
+                  href="https://www.linkedin.com/in/usman-badmus/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedin />
+                </a>
+                <a
+                  href="https://github.com/midestic"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                >
+                  <FaGithub />
+                </a>
+                <a
+                  href="https://x.com/midestic_JS"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X"
+                >
+                  <FaTwitter />
+                </a>
+              </div>
             </div>
           </div>
+          <p className="eyebrow hero-scroll">Scroll ↓</p>
         </div>
       </RevealOnScroll>
+      <div className="marquee" aria-hidden="true">
+        <div className="marquee-track">
+          {marqueeItems.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

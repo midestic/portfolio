@@ -1,31 +1,57 @@
-import Flospay from "../projects/flospay";
-import IGWApp from "../projects/IGWApp";
-import Mahjeq from "../projects/Mahjeq";
-import Pharmmar from "../projects/Pharmmar";
-// import { RevealOnScroll } from "../RevealOnScroll";
-
 export const Projects = () => {
   return (
-    <section
-      id="projects"
-      className="min-h-screen flex items-center justify-center py-20"
-    >
-      {/* <RevealOnScroll> */}
-      <div className="max-w-5xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-          Selected Projects
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
-          <Flospay />
-
-          <IGWApp />
-
-          <Mahjeq />
-
-          <Pharmmar />
+    <section id="projects" className="editorial-section">
+      <div className="section-heading">
+        <span className="section-number">03 / Work</span>
+        <div>
+          <h2 className="section-title">
+            Selected
+            <br />
+            projects.
+          </h2>
+          <a className="section-link" href="#contact">
+            Have a project in mind? ↗
+          </a>
         </div>
       </div>
-      {/* </RevealOnScroll> */}
+      <div className="project-list">
+        <article className="project-row">
+          <span className="section-number">01</span>
+          <h3>Flospay</h3>
+          <p>11/2025 — Present · Thousands of users · Secure payments</p>
+          <a href="https://flospay.com/" target="_blank" rel="noreferrer">
+            View ↗
+          </a>
+        </article>
+        <article className="project-row">
+          <span className="section-number">02</span>
+          <h3>IGW App</h3>
+          <p>11/2025 — 01/2026 · 300+ terms · Compliance tooling</p>
+          <a
+            href="https://app.igamingwritenow.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View ↗
+          </a>
+        </article>
+        <article className="project-row">
+          <span className="section-number">03</span>
+          <h3>Mahjeq</h3>
+          <p>10/2025 — 01/2026 · 35% efficiency gain · Paystack</p>
+          <a href="https://mahjeqfoods.com/" target="_blank" rel="noreferrer">
+            View ↗
+          </a>
+        </article>
+        <article className="project-row">
+          <span className="section-number">04</span>
+          <h3>Pharmmar</h3>
+          <p>06/2025 — 11/2025 · Waitlist growth · B2B marketplace</p>
+          <a href="https://pharmmar.com/" target="_blank" rel="noreferrer">
+            View ↗
+          </a>
+        </article>
+      </div>
     </section>
   );
 };

@@ -587,7 +587,8 @@ a {
   letter-spacing: 0.08em;
   overflow-wrap: anywhere;
 }
-.project-row a {
+.project-row a,
+.project-status {
   justify-self: end;
   color: var(--muted);
   font:
@@ -596,7 +597,8 @@ a {
   text-transform: uppercase;
 }
 .project-row:hover p,
-.project-row:hover a {
+.project-row:hover a,
+.project-row:hover .project-status {
   color: var(--paper);
 }
 .contact-section {

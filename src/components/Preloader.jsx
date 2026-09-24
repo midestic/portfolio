@@ -5,12 +5,20 @@ import { runPreloaderScene } from "../lib/scene";
 
 export default function Preloader({ onComplete }) {
   const canvasRef = useRef(null);
+  const doneRef = useRef(false);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    const stop = runPreloaderScene(canvasRef.current, onComplete);
+    const complete = () => {
+      if (doneRef.current) return;
+      doneRef.current = true;
+      onComplete();
+    };
+    const stop = runPreloaderScene(canvasRef.current, complete);
+    const failsafe = setTimeout(complete, 6500);
     return () => {
       stop();
+      clearTimeout(failsafe);
       document.body.style.overflow = "";
     };
   }, [onComplete]);

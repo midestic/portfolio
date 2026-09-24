@@ -16,6 +16,7 @@ function debounce(fn, ms) {
 }
 
 function drawBeam(ctx, p1, p2, progress, headBoost) {
+  if (!p1 || !p2) return;
   const dx = p2.x - p1.x;
   const dy = p2.y - p1.y;
   const dist = Math.hypot(dx, dy);
@@ -71,6 +72,13 @@ export function runPreloaderScene(canvas, onComplete) {
     };
   }
 
+  let completed = false;
+  const finish = () => {
+    if (disposed || completed) return;
+    completed = true;
+    onComplete();
+  };
+
   const onResize = debounce(() => {
     if (disposed) return;
     metrics = resizeCanvas(canvas);
@@ -78,7 +86,18 @@ export function runPreloaderScene(canvas, onComplete) {
   window.addEventListener("resize", onResize);
 
   const frame = (now) => {
-    if (disposed) return;
+    if (disposed || completed) return;
+    try {
+      drawPreloaderFrame(now);
+    } catch (error) {
+      console.error("Preloader frame error:", error);
+      finish();
+      return;
+    }
+    if (!disposed && !completed) raf = requestAnimationFrame(frame);
+  };
+
+  const drawPreloaderFrame = (now) => {
     const { ctx, w, h } = metrics;
     const t = now - start;
     const placements = layoutArtworks(w, h);
@@ -164,9 +183,15 @@ export function runPreloaderScene(canvas, onComplete) {
       }
     }
 
-    if (t >= beamStart && t < glowStart + 400 && burstProgress < 0) {
+    if (t >= beamStart && t < glowStart + 400 && burstProgress < 0 && pA && pB) {
       const bp = Math.min(1, (t - beamStart) / T.beam);
-      drawBeam(ctx, pA.tip, pB.tip, bp, t >= beamStart + 480);
+      drawBeam(
+        ctx,
+        { x: pA.tipX, y: pA.tipY },
+        { x: pB.tipX, y: pB.tipY },
+        bp,
+        t >= beamStart + 480
+      );
     }
 
     if (burstProgress >= 0) {
@@ -182,19 +207,20 @@ export function runPreloaderScene(canvas, onComplete) {
       ctx.fillRect(0, 0, w, h);
       ctx.globalAlpha = 1;
 
-      if (I >= 1 && !disposed) {
-        onComplete();
+      if (I >= 1) {
+        finish();
         return;
       }
     }
-
-    raf = requestAnimationFrame(frame);
   };
 
   raf = requestAnimationFrame(frame);
 
+  const failsafe = setTimeout(finish, 5500);
+
   return () => {
     disposed = true;
+    clearTimeout(failsafe);
     cancelAnimationFrame(raf);
     window.removeEventListener("resize", onResize);
   };

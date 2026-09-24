@@ -43,7 +43,8 @@ function App() {
 
   const handlePreloaderDone = useCallback(() => {
     setReady(true);
-    setTimeout(() => setShowPreloader(false), 100);
+    setShowPreloader(false);
+    document.body.style.overflow = "";
   }, []);
 
   return (

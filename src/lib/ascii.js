@@ -8,132 +8,92 @@ function hash3(a, b, c) {
   return Math.abs(h ^ (h >>> 16));
 }
 
-function buildHandGrid(facing) {
-  const cellPx = 8;
-  const cols = 44;
-  const rows = 30;
-  const w = cols * cellPx;
-  const h = rows * cellPx;
+const LEFT_LINES = [
+  "// js ts php py go rust c",
+  "",
+  "const engineer = {",
+  '  name: "Badmus Usman",',
+  '  role: "Fullstack Engineer",',
+  '  base: "Lagos, NG",',
+  "  stack: [",
+];
 
-  const canvas = document.createElement("canvas");
-  canvas.width = w;
-  canvas.height = h;
-  const ctx = canvas.getContext("2d");
+const RIGHT_LINES = [
+  '    "react", "next",',
+  '    "node", "express",',
+  '    "python", "sql",',
+  '    "php", "docker",',
+  "  ],",
+  "  openToWork: true,",
+  "};",
+];
 
-  ctx.clearRect(0, 0, w, h);
+const RAIL_LEFT_TOP = "// html css js ts jsx sql";
+const RAIL_LEFT_BOT = "// php python bash git npm";
+const RAIL_RIGHT_TOP = "// java go rust csharp cpp";
+const RAIL_RIGHT_BOT = "// docker redis aws linux";
 
-  const draw = () => {
-    const grad = ctx.createLinearGradient(facing > 0 ? 0 : w, 0, facing > 0 ? w : 0, 0);
-    grad.addColorStop(0, "#3a3a3a");
-    grad.addColorStop(0.55, "#b0b0b0");
-    grad.addColorStop(1, "#ffffff");
-    ctx.fillStyle = grad;
+function blankGrid(cols, rows) {
+  return Array.from({ length: rows }, () => Array(cols).fill(" "));
+}
 
-    const roundRect = (x, y, rw, rh, r) => {
-      ctx.beginPath();
-      ctx.moveTo(x + r, y);
-      ctx.arcTo(x + rw, y, x + rw, y + rh, r);
-      ctx.arcTo(x + rw, y + rh, x, y + rh, r);
-      ctx.arcTo(x, y + rh, x, y, r);
-      ctx.arcTo(x, y, x + rw, y, r);
-      ctx.closePath();
-      ctx.fill();
-    };
+function stampLine(grid, line, row, col) {
+  if (row < 0 || row >= grid.length) return;
+  for (let c = 0; c < line.length; c++) {
+    const cc = col + c;
+    if (cc >= 0 && cc < grid[0].length) grid[row][cc] = line[c];
+  }
+}
 
-    const cy = h * 0.5;
+function stampCode(grid, lines, startRow, startCol) {
+  lines.forEach((line, i) => stampLine(grid, line, startRow + i, startCol));
+}
 
-    if (facing > 0) {
-      roundRect(18, cy - 52, 118, 104, 40);
-      roundRect(118, cy - 16, 158, 32, 16);
-      roundRect(112, cy - 64, 44, 34, 14);
-      roundRect(146, cy - 70, 40, 34, 14);
-      roundRect(176, cy - 66, 36, 32, 14);
-      roundRect(40, cy + 30, 74, 34, 16);
-      ctx.beginPath();
-      ctx.arc(44, cy - 4, 16, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.beginPath();
-      ctx.arc(96, cy - 8, 10, 0, Math.PI * 2);
-      ctx.fill();
-    } else {
-      roundRect(w - 18 - 118, cy - 52, 118, 104, 40);
-      roundRect(w - 118 - 158, cy - 16, 158, 32, 16);
-      roundRect(w - 112 - 44, cy - 64, 44, 34, 14);
-      roundRect(w - 146 - 40, cy - 70, 40, 34, 14);
-      roundRect(w - 176 - 36, cy - 66, 36, 32, 14);
-      roundRect(w - 40 - 74, cy + 30, 74, 34, 16);
-      ctx.beginPath();
-      ctx.arc(w - 44, cy - 4, 16, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.beginPath();
-      ctx.arc(w - 96, cy - 8, 10, 0, Math.PI * 2);
-      ctx.fill();
+function buildCodeArt(side) {
+  const cols = 54;
+  const rows = 36;
+  const grid = blankGrid(cols, rows);
+  const isLeft = side === "left";
+  const lines = isLeft ? LEFT_LINES : RIGHT_LINES;
+
+  stampLine(grid, isLeft ? RAIL_LEFT_TOP : RAIL_RIGHT_TOP, 1, 2);
+  stampLine(grid, isLeft ? RAIL_LEFT_BOT : RAIL_RIGHT_BOT, rows - 2, 2);
+
+  const startRow = Math.floor((rows - lines.length) / 2);
+  const startCol = 3;
+  stampCode(grid, lines, startRow, startCol);
+
+  const midRow = startRow + Math.floor(lines.length / 2);
+  let tip;
+
+  if (isLeft) {
+    const endCol = startCol + Math.max(...lines.map((l) => l.length));
+    for (let c = endCol + 1; c < cols - 1; c++) {
+      if (grid[midRow][c] === " ") grid[midRow][c] = "·";
     }
-
-    for (let i = 0; i < 26; i++) {
-      const hx = hash3(facing + 1, i, 7);
-      const px = (hx % 1000) / 1000;
-      const py = ((hx >> 10) % 1000) / 1000;
-      const x = 14 + px * (w - 28);
-      const y = 10 + py * (h - 20);
-      const nearFinger =
-        facing > 0 ? x > w * 0.55 && x < w * 0.95 : x < w * 0.45 && x > w * 0.05;
-      if (nearFinger && Math.abs(y - cy) < 60) continue;
-      const r = 2 + ((hx >> 20) % 5);
-      ctx.globalAlpha = 0.35;
-      ctx.beginPath();
-      ctx.arc(x, y, r, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.globalAlpha = 1;
+    grid[midRow][cols - 1] = "█";
+    tip = { x: cols - 1, y: midRow };
+  } else {
+    for (let c = 1; c < startCol - 1; c++) {
+      if (grid[midRow][c] === " ") grid[midRow][c] = "·";
     }
+    grid[midRow][0] = "█";
+    tip = { x: 0, y: midRow };
+  }
+
+  return {
+    cols,
+    rows,
+    chars: grid.map((row) => row.join("")),
+    tip,
+    facing: isLeft ? 1 : -1,
   };
-
-  draw();
-
-  const data = ctx.getImageData(0, 0, w, h).data;
-  const chars = [];
-  for (let r = 0; r < rows; r++) {
-    let row = "";
-    for (let c = 0; c < cols; c++) {
-      let sum = 0;
-      let count = 0;
-      for (let y = 0; y < cellPx; y += 2) {
-        for (let x = 0; x < cellPx; x += 2) {
-          const i = ((r * cellPx + y) * w + (c * cellPx + x)) * 4;
-          const a = data[i + 3] / 255;
-          if (a > 0.2) {
-            const lum = (data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114) / 255;
-            sum += lum * a;
-            count += a;
-          }
-        }
-      }
-      if (count > 0) {
-        const lum = sum / count;
-        const idx = Math.min(RAMP.length - 1, Math.max(1, Math.round(lum * (RAMP.length - 1))));
-        row += RAMP[idx];
-      } else {
-        row += " ";
-      }
-    }
-    chars.push(row);
-  }
-
-  const tipY = Math.floor(rows / 2);
-  let tipX = facing > 0 ? cols - 6 : 5;
-  while (tipX > 0 && tipX < cols - 1) {
-    const ch = chars[tipY][tipX];
-    if (ch !== " ") break;
-    tipX += facing > 0 ? -1 : 1;
-  }
-
-  return { cols, rows, chars, tip: { x: tipX, y: tipY }, facing };
 }
 
 let cachedArts = null;
 export function getArtworks() {
   if (!cachedArts) {
-    cachedArts = { left: buildHandGrid(1), right: buildHandGrid(-1) };
+    cachedArts = { left: buildCodeArt("left"), right: buildCodeArt("right") };
   }
   return cachedArts;
 }
@@ -160,8 +120,8 @@ export function layoutArtworks(w, h) {
   const placements = [];
 
   if (mobile) {
-    const availH = h * 0.34;
-    const cell = Math.min((w * 0.86) / left.cols, availH / left.rows);
+    const availH = h * 0.36;
+    const cell = Math.min((w * 0.9) / left.cols, availH / left.rows);
     const lw = left.cols * cell;
     const lh = left.rows * cell;
     const rw = right.cols * cell;
@@ -186,10 +146,10 @@ export function layoutArtworks(w, h) {
       tipY: top + lh + gap + (right.tip.y + 0.7) * cell,
     });
   } else {
-    const cell = Math.min((w * 0.4) / left.cols, (h * 0.56) / left.rows);
+    const cell = Math.min((w * 0.42) / left.cols, (h * 0.58) / left.rows);
     const lw = left.cols * cell;
     const lh = left.rows * cell;
-    const gap = Math.min(w * 0.04, 70);
+    const gap = Math.min(w * 0.03, 56);
     const totalW = lw * 2 + gap;
     const leftX = (w - totalW) / 2;
     const rightX = leftX + lw + gap;

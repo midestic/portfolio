@@ -151,6 +151,17 @@ export function runPreloaderScene(canvas, onComplete) {
 
           const tipDist = Math.hypot(c - art.tip.x, r - art.tip.y);
           const nearTip = tipDist < 4.5;
+          const isTipCell = c === art.tip.x && r === art.tip.y;
+
+          if (
+            isTipCell &&
+            progress >= 1 &&
+            t >= tipStart &&
+            Math.floor(t / 480) % 2 === 1 &&
+            t < glowStart
+          ) {
+            continue;
+          }
 
           if (t >= tipStart && t < beamStart && nearTip) {
             color = "#ffe4c4";
@@ -395,6 +406,11 @@ export function runHeroScene(canvas) {
           }
 
           const tipDist = Math.hypot(c - art.tip.x, r - art.tip.y);
+          const isTipCell = c === art.tip.x && r === art.tip.y;
+
+          if (isTipCell && progress >= 1 && !beamPhase && Math.floor(t / 520) % 2 === 1) {
+            continue;
+          }
 
           if (beamPhase && tipDist < 5) {
             color = "#ffe4c4";

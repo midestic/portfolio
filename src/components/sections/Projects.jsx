@@ -20,7 +20,7 @@ const PROJECTS = [
     year: "2025 — Present",
     category: "Marketplace",
     stack: "Buyer workflows",
-    href: "https://pharmmar.com/",
+    href: "https://pharmmar-customers.on.helicarrier.xyz/",
     img: "project-img-2",
     letter: "P",
   },
@@ -114,7 +114,11 @@ function ProjectCard({ project, index }) {
           initial={{ scaleX: 1 }}
           whileInView={{ scaleX: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.3 + (index % 4) * 0.15, ease: EASE }}
+          transition={{
+            duration: 1,
+            delay: 0.3 + (index % 4) * 0.15,
+            ease: EASE,
+          }}
           style={{ transformOrigin: "right" }}
         />
         <motion.div
@@ -156,7 +160,9 @@ function ProjectCard({ project, index }) {
             {project.category}
           </span>
           <span className="h-1 w-1 rounded-full bg-rust" />
-          <span className="font-mono text-[0.75rem] text-[#555]">{project.stack}</span>
+          <span className="font-mono text-[0.75rem] text-[#555]">
+            {project.stack}
+          </span>
         </div>
       </div>
     </motion.a>

@@ -1,162 +1,92 @@
-import {
-  DiCss3,
-  DiHtml5,
-  DiJavascript1,
-  DiNodejs,
-  DiReact,
-} from "react-icons/di";
-import InfiniteScroll from "../animations/InfiniteScroll";
-import { RevealOnScroll } from "../RevealOnScroll";
-import { SiTailwindcss, SiTypescript } from "react-icons/si";
-import { RiNextjsFill } from "react-icons/ri";
+import { motion } from "framer-motion";
+import { FiArrowUpRight as ArrowUpRight, FiDownload as Download } from "react-icons/fi";
+import { Eyebrow, WordReveal } from "../anim";
 
-export const About = () => {
-  const items = [
-    { content: <DiReact className="w-[150px] h-[150px] " /> },
-    { content: <p>REACT</p> },
-    { content: <DiHtml5 className="w-[150px] h-[150px] " /> },
-    { content: <p>HTML</p> },
-    { content: <SiTypescript className="w-[100px] h-[100px] " /> },
-    { content: <p>TYPESCRIPT</p> },
-    { content: <RiNextjsFill className="w-[100px] h-[100px] " /> },
-    { content: <p>NEXT.JS</p> },
-    { content: <DiJavascript1 className="w-[100px] h-[100px] " /> },
-    { content: <p>JAVASCRIPT</p> },
-    { content: <DiNodejs className="w-[100px] h-[100px] " /> },
-    { content: <p>NODE.JS</p> },
-    { content: <SiTailwindcss className="w-[100px] h-[100px] " /> },
-    { content: <p>TAILWIND CSS</p> },
-    { content: <DiCss3 className="w-[100px] h-[100px] " /> },
-    { content: <p>CSS</p> },
-  ];
+const EASE = [0.16, 1, 0.3, 1];
 
-  const frontendSkills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "Shadcn",
-    "Git",
-    "GitHub",
-  ];
-
-  const backendSkills = [
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "MySQL",
-    "Sequelize ORM",
-    "JWT",
-    "RESTful APIs",
-  ];
-
+export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center py-20"
+      className="bg-page px-[clamp(24px,5vw,80px)] py-[clamp(60px,8vw,120px)]"
     >
-      <RevealOnScroll>
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            {" "}
-            About Me
-          </h2>
+      <div className="mx-auto grid max-w-[1400px] grid-cols-2 items-start gap-x-[clamp(40px,6vw,120px)] max-lg:flex max-lg:flex-col max-lg:gap-8">
+        <Eyebrow className="lg:col-start-1 lg:row-start-1 text-rust">
+          About Me
+        </Eyebrow>
 
-          <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
-            <p className="text-gray-300 mb-6">
-              Full-Stack Developer with half a decade of experience designing
-              database schemas, building secure RESTful APIs, and delivering
-              scalable SaaS and fintech applications using JavaScript, Node.js,
-              Express, Next.js, and TypeScript. Expertise in authentication &
-              authorization (JWT, HttpOnly cookies, role-based access),
-              compliance-friendly data handling, audit-safe transactions, and
-              system design.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4"> Frontend </h3>
-                <div className="flex flex-wrap gap-2">
-                  {frontendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition
-                    "
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4"> Backend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {backendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition
-                    "
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> 🏫 Education </h3>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
-                <li>
-                  <strong>B.Sc. Building Technology</strong> - The Federal
-                  University of Technology Akure (2024)
-                </li>
-                <li>
-                  <strong>NYSC</strong> (2024 - 2025)
-                </li>
-              </ul>
-            </div>
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4">
-                {" "}
-                � Professional Experience{" "}
-              </h3>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
-                <li>
-                  <strong>Fullstack Engineer</strong> - Flospay (2025 - Present)
-                </li>
-                <li>
-                  <strong>Fullstack Developer</strong> - Freelance/Contract
-                  (Mahjeq, Luxhomes, Pharmmar, Ajopay)
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div
-            className=" mt-[50px]  rounded-xl border-white/10 border"
-            style={{ height: "500px", position: "relative" }}
+        <div className="relative h-170 w-full overflow-hidden max-lg:aspect-square max-lg:h-auto max-lg:w-4/5 max-lg:rounded-2xl lg:col-start-2 lg:row-span-2 lg:row-start-1">
+          <motion.div
+            className="absolute inset-0 z-10 bg-page"
+            initial={{ x: "0%" }}
+            whileInView={{ x: "101%" }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, delay: 0.2, ease: EASE }}
+          />
+          <motion.div
+            className="absolute inset-0 bg-[#0f0f0f]"
+            initial={{ scale: 1.4 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.6, delay: 0.2, ease: EASE }}
           >
-            <InfiniteScroll
-              items={items}
-              isTilted={true}
-              tiltDirection="left"
-              autoplay={true}
-              autoplaySpeed={3}
-              autoplayDirection="down"
-              pauseOnHover={true}
+            <img
+              src="/images/img.jpg"
+              alt="Badmus Usman"
+              className="absolute inset-0 h-full w-full object-cover object-top"
+            />
+          </motion.div>
+        </div>
+
+        <div className="lg:col-start-1 lg:row-start-2">
+          <div className="mb-4 text-[clamp(1.375rem,2.5vw,2.125rem)] leading-[1.35] font-semibold tracking-[-0.02em] text-black md:mb-8">
+            <WordReveal
+              text="I'm Badmus O. Usman, a full-stack engineer with half a decade of experience building production SaaS and fintech products."
+              stagger={0.035}
             />
           </div>
+          <motion.p
+            className="mb-4 max-w-[440px] text-[0.9375rem] leading-[1.8] font-normal text-gray-dark md:mb-10"
+            initial={{ opacity: 0, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.4 }}
+          >
+            I create secure payment systems, high-converting experiences, and
+            scalable dashboards that improve trust, engagement, and revenue.
+          </motion.p>
+          <motion.div
+            className="flex flex-col gap-3"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <a
+              href="#experience"
+              className="group inline-flex w-fit items-center gap-3"
+            >
+              <span className="link-label">My experience</span>
+              <ArrowUpRight
+                size={18}
+                className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
+            </a>
+            <div className="h-3" />
+            <a
+              href="/cv/Badmus-Usman.pdf"
+              download="Badmus-Usman.pdf"
+              className="group inline-flex w-fit items-center gap-3"
+            >
+              <span className="link-label">Download resume</span>
+              <Download
+                size={17}
+                className="transition-transform duration-200 group-hover:translate-y-0.5"
+              />
+            </a>
+          </motion.div>
         </div>
-      </RevealOnScroll>
+      </div>
     </section>
   );
-};
+}

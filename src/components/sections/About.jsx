@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
-import { FiArrowUpRight as ArrowUpRight, FiDownload as Download } from "react-icons/fi";
+import {
+  FiArrowUpRight as ArrowUpRight,
+  FiDownload as Download,
+} from "react-icons/fi";
 import { Eyebrow, WordReveal } from "../anim";
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -31,7 +34,7 @@ export default function About() {
             transition={{ duration: 1.6, delay: 0.2, ease: EASE }}
           >
             <img
-              src="/images/img.jpg"
+              src="/images/me.jpeg"
               alt="Badmus Usman"
               className="absolute inset-0 h-full w-full object-cover object-top"
             />
@@ -41,7 +44,7 @@ export default function About() {
         <div className="lg:col-start-1 lg:row-start-2">
           <div className="mb-4 text-[clamp(1.375rem,2.5vw,2.125rem)] leading-[1.35] font-semibold tracking-[-0.02em] text-black md:mb-8">
             <WordReveal
-              text="I'm Badmus O. Usman, a full-stack engineer with half a decade of experience building production SaaS and fintech products."
+              text="I'm Badmus Usman, a full-stack engineer with half a decade of experience building production SaaS and fintech products."
               stagger={0.035}
             />
           </div>

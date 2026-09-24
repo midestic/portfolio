@@ -48,7 +48,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App ">
       <div className="site-shell">
         <AnimatePresence onExitComplete={() => {}}>
           {showPreloader && <Preloader onComplete={handlePreloaderDone} />}

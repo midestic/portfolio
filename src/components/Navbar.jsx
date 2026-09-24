@@ -117,7 +117,11 @@ export default function Navbar() {
                     key={link.label}
                     initial={{ opacity: 0, x: -60 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.7, delay: 0.35 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{
+                      duration: 0.7,
+                      delay: 0.35 + i * 0.08,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
                   >
                     <a
                       href={link.href}
@@ -143,7 +147,11 @@ export default function Navbar() {
               className="hidden w-[320px] border-l border-[#222] px-10 lg:flex lg:flex-col lg:justify-end lg:pb-[clamp(48px,8vw,100px)]"
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.7,
+                delay: 0.5,
+                ease: [0.16, 1, 0.3, 1],
+              }}
             >
               <div className="mb-10">
                 <p className="eyebrow mb-4 text-[#555]">Get in touch</p>

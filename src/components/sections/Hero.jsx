@@ -31,7 +31,7 @@ export default function Hero({ ready }) {
   const track = [...MARQUEE, ...MARQUEE];
 
   return (
-    <section id="home" ref={sectionRef} className="relative flex min-h-screen flex-col bg-black">
+    <section id="home" ref={sectionRef} className="relative flex min-h-[100svh] flex-col bg-black">
       <div className="grain pointer-events-none absolute inset-0 hero-grid" aria-hidden="true" />
       <div className="relative flex-1 overflow-hidden">
         <canvas

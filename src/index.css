@@ -111,7 +111,8 @@
   .project-img-4::before,
   .project-img-5::before,
   .project-img-6::before,
-  .project-img-7::before {
+  .project-img-7::before,
+  .project-img-8::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -143,6 +144,10 @@
 
   .project-img-7::before {
     background: linear-gradient(145deg, #0d0a1a, #1d1833, #252040);
+  }
+
+  .project-img-8::before {
+    background: linear-gradient(145deg, #11120f, #28352b, #586246);
   }
 
   .scrollbar-hide {

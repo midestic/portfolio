@@ -72,7 +72,7 @@ export default function Contact() {
               </p>
             </motion.div>
           ) : (
-            <form className="flex flex-col gap-10" onSubmit={handleSubmit}>
+            <form className="flex flex-col gap-8 sm:gap-10" onSubmit={handleSubmit}>
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -128,7 +128,7 @@ export default function Contact() {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="self-start bg-black px-14 py-5 text-[0.75rem] font-semibold tracking-[0.15em] text-off-white uppercase transition-colors hover:bg-[#222] disabled:cursor-not-allowed disabled:opacity-60"
+                className="min-h-11 self-start bg-black px-10 py-4 text-[0.75rem] font-semibold tracking-[0.15em] text-off-white uppercase transition-colors hover:bg-[#222] disabled:cursor-not-allowed disabled:opacity-60 sm:px-14 sm:py-5"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -190,7 +190,7 @@ export default function Contact() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="grid h-10 w-10 place-items-center rounded-sm border border-solid border-gray text-[0.6875rem] font-semibold tracking-[0.08em] text-gray-dark transition-colors hover:border-black hover:text-black"
+                  className="grid h-11 w-11 place-items-center rounded-sm border border-solid border-gray text-[0.6875rem] font-semibold tracking-[0.08em] text-gray-dark transition-colors hover:border-black hover:text-black"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}

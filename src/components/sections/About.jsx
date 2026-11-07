@@ -18,7 +18,7 @@ export default function About() {
           About Me
         </Eyebrow>
 
-        <div className="relative h-170 w-full overflow-hidden max-lg:aspect-square max-lg:h-auto max-lg:w-4/5 max-lg:rounded-2xl lg:col-start-2 lg:row-span-2 lg:row-start-1">
+        <div className="relative h-170 w-full overflow-hidden max-lg:aspect-square max-lg:h-auto max-lg:rounded-2xl lg:col-start-2 lg:row-span-2 lg:row-start-1">
           <motion.div
             className="absolute inset-0 z-10 bg-page"
             initial={{ x: "0%" }}

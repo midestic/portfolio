@@ -34,6 +34,17 @@ export default function Navbar() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return undefined;
+
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   const toggle = () => {
     if (!open && buttonRef.current) {
       const rect = buttonRef.current.getBoundingClientRect();
@@ -55,7 +66,7 @@ export default function Navbar() {
   return (
     <>
       <div
-        className={`fixed top-0 right-0 left-0 z-[130] flex items-center justify-between px-[clamp(24px,5vw,80px)] py-5 transition-colors duration-300 ${
+        className={`fixed top-0 right-0 left-0 z-[130] flex items-center justify-between px-[clamp(20px,5vw,80px)] pt-[max(0.75rem,env(safe-area-inset-top))] pb-3 transition-colors duration-300 sm:pb-4 sm:pt-[max(1rem,env(safe-area-inset-top))] ${
           scrolled && !open ? "bg-black" : "bg-transparent"
         }`}
       >
@@ -67,7 +78,7 @@ export default function Navbar() {
           <span className="grid h-7 w-7 place-items-center border border-rust text-rust transition-colors duration-300 group-hover:bg-rust group-hover:text-off-white">
             <span className="text-[10px] font-bold tracking-tight">BU</span>
           </span>
-          <span className="text-lg font-semibold tracking-[-0.01em] text-off-white">
+          <span className="whitespace-nowrap text-[clamp(0.95rem,4vw,1.125rem)] font-semibold tracking-[-0.01em] text-off-white">
             Badmus Usman
           </span>
         </a>
@@ -78,15 +89,16 @@ export default function Navbar() {
           onClick={toggle}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="flex w-7 flex-col gap-[6px]"
+          aria-controls="primary-navigation"
+          className="grid h-11 w-11 shrink-0 place-content-center gap-[6px] rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rust"
         >
           <motion.span
-            className="block h-[2px] w-full bg-off-white"
+            className="block h-[2px] w-6 bg-off-white"
             animate={open ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           />
           <motion.span
-            className="block h-[2px] w-full bg-off-white"
+            className="block h-[2px] w-6 bg-off-white"
             animate={open ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           />
@@ -96,15 +108,17 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.nav
-            className="fixed inset-0 z-[120] flex bg-black [will-change:clip-path]"
+            id="primary-navigation"
+            aria-label="Main navigation"
+            className="fixed inset-0 z-[120] flex min-h-0 bg-black [will-change:clip-path]"
             initial={{ clipPath: `circle(0% at ${origin.x} ${origin.y})` }}
             animate={{ clipPath: `circle(150% at ${origin.x} ${origin.y})` }}
             exit={{ opacity: 0, transition: { duration: 0.45 } }}
             transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="flex flex-1 flex-col justify-center px-[clamp(24px,5vw,80px)] pb-[clamp(48px,8vw,100px)] max-lg:justify-center">
+            <div className="flex min-h-full flex-1 flex-col justify-center overflow-y-auto overscroll-contain px-[clamp(20px,5vw,80px)] pt-20 pb-[calc(2rem+env(safe-area-inset-bottom))] max-lg:justify-center">
               <motion.p
-                className="eyebrow mb-12 text-[#555]"
+                className="eyebrow mb-6 text-[#555] sm:mb-10"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
@@ -125,13 +139,13 @@ export default function Navbar() {
                   >
                     <a
                       href={link.href}
-                      className="group flex items-center"
+                      className="group flex min-h-16 items-center sm:min-h-20"
                       onClick={(event) => handleLink(event, link.href)}
                     >
-                      <span className="py-6 pr-8 font-mono text-[0.625rem] tabular-nums text-[#444]">
+                      <span                       className="py-4 pr-4 font-mono text-[0.625rem] tabular-nums text-[#444] sm:pr-8">
                         {link.num}
                       </span>
-                      <span className="py-6 pl-8 text-[clamp(2.5rem,7vw,5.5rem)] leading-none font-extrabold tracking-[-0.04em] text-off-white uppercase transition-all duration-300 group-hover:pl-12 group-hover:text-[#666]">
+                      <span                       className="py-4 pl-4 text-[clamp(2.5rem,11vw,5.5rem)] leading-none font-extrabold tracking-[-0.04em] text-off-white uppercase transition-all duration-300 group-hover:pl-8 group-hover:text-[#666] sm:pl-8 sm:py-6 sm:group-hover:pl-12">
                         {link.label}
                       </span>
                       <span className="ml-auto text-[clamp(1.5rem,3vw,2.5rem)] text-[#333] transition-all duration-300 group-hover:translate-x-[-8px] group-hover:text-[#666]">
@@ -140,6 +154,34 @@ export default function Navbar() {
                     </a>
                   </motion.div>
                 ))}
+              </div>
+              <div className="mt-8 border-t border-[#222] pt-6 lg:hidden">
+                <p className="eyebrow mb-3 text-[#555]">Get in touch</p>
+                <a
+                  href="mailto:badmususman50@gmail.com"
+                  className="block min-h-11 break-all py-2 text-sm text-[#aaa] transition-colors hover:text-off-white"
+                >
+                  badmususman50@gmail.com
+                </a>
+                <a
+                  href="tel:+2349033414253"
+                  className="block min-h-11 py-2 text-sm text-[#aaa] transition-colors hover:text-off-white"
+                >
+                  +234 903 341 4253
+                </a>
+                <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+                  {SOCIALS.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="min-h-11 py-3 text-xs font-medium tracking-[0.05em] text-[#777] transition-colors hover:text-off-white"
+                    >
+                      {social.label}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
 

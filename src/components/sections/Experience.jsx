@@ -61,7 +61,7 @@ export default function Experience() {
           {EXPERIENCE.map((job, i) => (
             <div key={job.num}>
               <motion.div
-                className="relative flex items-start overflow-visible py-[clamp(24px,3.5vw,44px)] gap-[clamp(16px,3vw,40px)] max-sm:flex-col max-sm:gap-3"
+                className="relative flex items-start overflow-visible py-[clamp(24px,3.5vw,44px)] gap-[clamp(16px,3vw,40px)] max-lg:flex-col max-lg:gap-3"
                 initial={{ opacity: 0, x: -80 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
@@ -70,8 +70,8 @@ export default function Experience() {
                 <span className="pt-1.5 font-mono text-[0.625rem] tabular-nums text-rust">
                   {job.num}
                 </span>
-                <div className="flex w-full items-start justify-between gap-[clamp(20px,4vw,60px)] max-sm:flex-col max-sm:gap-3">
-                  <div className="shrink-0">
+                <div className="flex w-full items-start justify-between gap-[clamp(20px,4vw,60px)] max-lg:flex-col max-lg:gap-3">
+                  <div className="w-full">
                     <div className="overflow-hidden">
                       <motion.h3
                         className="text-[clamp(1.25rem,2.2vw,2rem)] leading-none font-extrabold tracking-[-0.03em] text-off-white uppercase"
@@ -88,7 +88,7 @@ export default function Experience() {
                     </span>
                   </div>
                   <motion.ul
-                    className="max-w-[440px] space-y-2 text-[0.875rem] leading-[1.7] text-[#666]"
+                    className="w-full max-w-[440px] space-y-2 text-[0.875rem] leading-[1.7] text-[#666]"
                     initial={{ opacity: 0, x: 60 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}

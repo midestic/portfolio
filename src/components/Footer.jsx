@@ -20,7 +20,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: EASE }}
           >
-            <h2 className="mb-14 text-[clamp(2rem,4vw,3.8rem)] leading-[1.3] font-extrabold tracking-[-0.03em] text-off-white">
+            <h2 className="mb-8 text-[clamp(2rem,8vw,3.8rem)] leading-[1.15] font-extrabold tracking-[-0.03em] text-off-white md:mb-14">
               Have an idea?
               <br />
               Let&apos;s build it.

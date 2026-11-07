@@ -11,6 +11,8 @@ const PROJECTS = [
     year: "2025 — Present",
     category: "Fintech",
     stack: "Secure payments",
+    description:
+      "A fintech platform for digital payments, group savings, peer-to-peer transfers, and secure payouts.",
     href: "https://flospay.com/",
     img: "project-img-1",
     letter: "F",
@@ -20,6 +22,8 @@ const PROJECTS = [
     year: "2025 — Present",
     category: "Marketplace",
     stack: "Buyer workflows",
+    description:
+      "A pharmaceutical marketplace that streamlines product discovery and purchasing for buyers.",
     href: "https://pharmmar-customers.on.helicarrier.xyz/",
     img: "project-img-2",
     letter: "P",
@@ -29,6 +33,8 @@ const PROJECTS = [
     year: "2026 — Present",
     category: "Civic tech",
     stack: "Field workflows",
+    description:
+      "A civic-tech platform built to support LASBCA field operations and workflows.",
     href: "https://lasbca-ms.netlify.app/",
     img: "project-img-3",
     letter: "L",
@@ -38,6 +44,8 @@ const PROJECTS = [
     year: "2026",
     category: "Events",
     stack: "Guest management",
+    description:
+      "A wedding RSVP experience for inviting guests and keeping attendance details organized.",
     href: "https://ola-dotun-2026.netlify.app/",
     img: "project-img-4",
     letter: "W",
@@ -47,6 +55,8 @@ const PROJECTS = [
     year: "2025 — 2026",
     category: "EdTech",
     stack: "Compliance tooling",
+    description:
+      "A glossary and localization platform that helps iGaming writers create compliant content.",
     href: "https://app.igamingwritenow.com/",
     img: "project-img-5",
     letter: "I",
@@ -56,6 +66,8 @@ const PROJECTS = [
     year: "2025 — 2026",
     category: "Food tech",
     stack: "Paystack · 35% lift",
+    description:
+      "An online restaurant ordering platform with payments, order tracking, and operational tools.",
     href: "https://mahjeqfoods.com/",
     img: "project-img-6",
     letter: "M",
@@ -65,9 +77,22 @@ const PROJECTS = [
     year: "2025",
     category: "SaaS",
     stack: "Lead generation",
+    description:
+      "A product landing page and waitlist to introduce Pharmmar and collect early-access sign-ups.",
     href: "https://pharmmar.com/",
     img: "project-img-7",
     letter: "P",
+  },
+  {
+    name: "Midestic RN Library",
+    year: "2026 — Present",
+    category: "Open source",
+    stack: "React Native · NativeWind",
+    description:
+      "A React Native component library with a CLI to add editable, NativeWind-ready UI to your app.",
+    href: "https://midestic-rn-library.netlify.app/",
+    img: "project-img-8",
+    letter: "M",
   },
 ];
 
@@ -155,7 +180,7 @@ function ProjectCard({ project, index }) {
             {project.year}
           </span>
         </div>
-        <div className="mt-2.5 ml-[calc(clamp(8px,1vw,14px)+1.1em)] flex items-center gap-3">
+        <div className="mt-2.5 ml-[calc(clamp(8px,1vw,14px)+1.1em)] flex flex-wrap items-center gap-x-3 gap-y-1">
           <span className="font-mono text-[0.75rem] tracking-[0.08em] text-[#555] uppercase">
             {project.category}
           </span>
@@ -164,6 +189,9 @@ function ProjectCard({ project, index }) {
             {project.stack}
           </span>
         </div>
+        <p className="mt-3 ml-[calc(clamp(8px,1vw,14px)+1.1em)] max-w-[560px] text-[0.875rem] leading-[1.7] text-[#999]">
+          {project.description}
+        </p>
       </div>
     </motion.a>
   );
@@ -175,6 +203,7 @@ ProjectCard.propTypes = {
     year: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     stack: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
     href: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
     letter: PropTypes.string.isRequired,
@@ -201,7 +230,7 @@ export default function Projects() {
           </Eyebrow>
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 border-b border-[#333] pb-1 text-[0.75rem] font-semibold tracking-[0.15em] text-off-white uppercase transition-colors duration-300 hover:border-rust hover:text-rust-light"
+            className="group inline-flex items-center gap-2 border-b border-[#333] pb-1 text-right text-[0.6875rem] font-semibold tracking-[0.1em] text-off-white uppercase transition-colors duration-300 hover:border-rust hover:text-rust-light sm:text-[0.75rem] sm:tracking-[0.15em]"
           >
             Have a project in mind?
             <span className="transition-transform duration-300 group-hover:translate-x-0.5">
